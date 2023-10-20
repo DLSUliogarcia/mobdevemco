@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@drawable/cat_a" />
+        android:src="@drawable/cat_a" />
 
     <ImageView
         android:id="@+id/mouseView"
@@ -66,7 +66,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/catView"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@drawable/rat" />
+        android:src="@drawable/rat" />
 
     <Button
         android:id="@+id/settings"

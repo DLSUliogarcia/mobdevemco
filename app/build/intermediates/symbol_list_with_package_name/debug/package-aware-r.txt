@@ -930,6 +930,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pause
 drawable rat
 drawable round_btn
 drawable tooltip_frame_dark
@@ -1048,6 +1049,7 @@ id constraint
 id consume_window_insets_tag
 id content
 id contentPanel
+id continueBtn
 id continuousVelocity
 id cos
 id currentState
@@ -1154,12 +1156,16 @@ id parentPanel
 id parentRelative
 id path
 id pathRelative
+id pauseBtn
+id pauseMenu
+id pauseText
 id percent
 id pooling_container_listener_holder_tag
 id position
 id postLayout
 id progress_circular
 id progress_horizontal
+id quitBtn
 id radio
 id ratio
 id rectangles
