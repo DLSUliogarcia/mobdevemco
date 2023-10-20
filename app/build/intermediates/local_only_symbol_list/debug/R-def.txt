@@ -15,12 +15,16 @@ drawable living_room
 drawable rat
 drawable round_btn
 id catView
+id game_cat
 id game_livingRoom
+id game_mouse
 id highScoreBtn
 id livingRoom
 id mouseView
+id score
 id settings
 id startBtn
+id titleView
 layout game_layout
 layout start_layout
 mipmap ic_launcher

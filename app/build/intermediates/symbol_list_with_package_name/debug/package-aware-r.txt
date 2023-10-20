@@ -1086,7 +1086,9 @@ id expanded_menu
 id flip
 id forever
 id frost
+id game_cat
 id game_livingRoom
+id game_mouse
 id gone
 id graph
 id graph_wrap
@@ -1167,6 +1169,7 @@ id right
 id right_icon
 id right_side
 id sawtooth
+id score
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -1234,6 +1237,7 @@ id textSpacerNoTitle
 id time
 id title
 id titleDividerNoCustom
+id titleView
 id title_template
 id toggle
 id top

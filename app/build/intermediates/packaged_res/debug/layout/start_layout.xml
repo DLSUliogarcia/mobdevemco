@@ -14,18 +14,20 @@
         android:src="@drawable/living_room"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/round_btn"
-        android:backgroundTint="#80404080"
+        android:backgroundTint="#A6404080"
         android:includeFontPadding="false"
         android:text="Play"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFFF80"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,9 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/round_btn"
-        android:backgroundTint="#80404080"
+        android:backgroundTint="#A6404080"
         android:text="High Scores"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFFF80"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,13 +74,28 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/round_btn"
-        android:backgroundTint="#80404080"
+        android:backgroundTint="#A6404080"
         android:text="SETTINGS"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFFF80"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/highScoreBtn" />
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="CAT N' MOUSE"
+        android:textColor="#FFFF80"
+        android:textColorHighlight="#404080"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
