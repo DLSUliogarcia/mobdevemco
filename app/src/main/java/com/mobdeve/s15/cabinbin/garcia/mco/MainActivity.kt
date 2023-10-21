@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.widget.Toast
 
 class MainActivity : ComponentActivity() {
     //Application Variables
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var highScoreBtn: Button
     private lateinit var recyclerView: RecyclerView
     private lateinit var backBtn: ImageButton
+    private lateinit var fbBtn: ImageButton
     private val scoreList: ArrayList<Score> = DataHelper.initializeData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,6 +71,10 @@ class MainActivity : ComponentActivity() {
             backBtn.setOnClickListener {
                     setContentView(R.layout.start_layout)
                     setButtons()
+                }
+            fbBtn = findViewById(R.id.fbBtn)
+            fbBtn.setOnClickListener{
+                    Toast.makeText(this, "FB Share!", Toast.LENGTH_SHORT).show()
                 }
             }
 
