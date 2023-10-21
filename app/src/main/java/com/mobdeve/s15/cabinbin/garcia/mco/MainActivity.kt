@@ -1,23 +1,13 @@
 package com.mobdeve.s15.cabinbin.garcia.mco
 
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
-import com.mobdeve.s15.cabinbin.garcia.mco.ui.theme.CabinbinGarciaMCOTheme
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : ComponentActivity() {
     //Application Variables
@@ -27,16 +17,24 @@ class MainActivity : ComponentActivity() {
     private lateinit var quitBtn: Button
     private lateinit var pauseMenu: LinearLayout
 
+    private lateinit var highScoreBtn: Button
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var backBtn: ImageButton
+    private val scoreList: ArrayList<Score> = DataHelper.initializeData()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Start Menu Layout
         setContentView(R.layout.start_layout)
         setButtons()
+
+
+
     }
 
     private fun setButtons() {
-        //Button Actions
+        //Play Actions
         startBtn = findViewById(R.id.startBtn)
         startBtn.setOnClickListener {
             // Game Layout
@@ -59,5 +57,20 @@ class MainActivity : ComponentActivity() {
                 setButtons()
             }
         }
+        //High Score Button
+        highScoreBtn = findViewById(R.id.highScoreBtn)
+        highScoreBtn.setOnClickListener {
+            // High-Scores Layout
+            setContentView(R.layout.highscores_layout)
+            this.recyclerView = findViewById(R.id.highscoresRv)
+            this.recyclerView.adapter = MyAdapter(this.scoreList)
+            this.recyclerView.layoutManager = LinearLayoutManager(this)
+            backBtn = findViewById(R.id.backBtn)
+            backBtn.setOnClickListener {
+                    setContentView(R.layout.start_layout)
+                    setButtons()
+                }
+            }
+
     }
 }

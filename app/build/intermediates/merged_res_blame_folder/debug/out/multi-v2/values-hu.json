@@ -4,7 +4,7 @@
             "outputFile": "com.mobdeve.s15.cabinbin.garcia.mco.app-mergeDebugResources-47:/values-hu/values-hu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\06fc55d8d2c59069a03574abc9f3fa94\\transformed\\ui-release\\res\\values-hu\\values-hu.xml",
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\06fc55d8d2c59069a03574abc9f3fa94\\transformed\\ui-release\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\821f26a012569af4e4f97906124bf29d\\transformed\\core-1.12.0\\res\\values-hu\\values-hu.xml",
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\821f26a012569af4e4f97906124bf29d\\transformed\\core-1.12.0\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\e06d884f3e9890a0b602d349219a6365\\transformed\\appcompat-1.2.0\\res\\values-hu\\values-hu.xml",
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\e06d884f3e9890a0b602d349219a6365\\transformed\\appcompat-1.2.0\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\624a2deadee5db13613e1ade0ef94b6a\\transformed\\material3-1.1.2\\res\\values-hu\\values-hu.xml",
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\624a2deadee5db13613e1ade0ef94b6a\\transformed\\material3-1.1.2\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

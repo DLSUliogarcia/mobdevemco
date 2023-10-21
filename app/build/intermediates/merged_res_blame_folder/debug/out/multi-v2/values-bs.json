@@ -4,7 +4,24 @@
             "outputFile": "com.mobdeve.s15.cabinbin.garcia.mco.app-mergeDebugResources-47:/values-bs/values-bs.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\624a2deadee5db13613e1ade0ef94b6a\\transformed\\material3-1.1.2\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\821f26a012569af4e4f97906124bf29d\\transformed\\core-1.12.0\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,353,457,561,663,780",
+                        "endColumns": "97,101,97,103,103,101,116,100",
+                        "endOffsets": "148,250,348,452,556,658,775,876"
+                    },
+                    "to": {
+                        "startLines": "33,34,35,36,37,38,39,91",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3294,3392,3494,3592,3696,3800,3902,9271",
+                        "endColumns": "97,101,97,103,103,101,116,100",
+                        "endOffsets": "3387,3489,3587,3691,3795,3897,4014,9367"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\624a2deadee5db13613e1ade0ef94b6a\\transformed\\material3-1.1.2\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\e06d884f3e9890a0b602d349219a6365\\transformed\\appcompat-1.2.0\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\e06d884f3e9890a0b602d349219a6365\\transformed\\appcompat-1.2.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\06fc55d8d2c59069a03574abc9f3fa94\\transformed\\ui-release\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\06fc55d8d2c59069a03574abc9f3fa94\\transformed\\ui-release\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "4019,4120,7841,7935,8115,8278,8355,8447,8539,8624,8696,8767,8848,9111,9477,9557,9627",
                         "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,79,69,117",
                         "endOffsets": "4115,4203,7930,8029,8196,8350,8442,8534,8619,8691,8762,8843,8929,9179,9552,9622,9740"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\821f26a012569af4e4f97906124bf29d\\transformed\\core-1.12.0\\res\\values-bs\\values-bs.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,353,457,561,663,780",
-                        "endColumns": "97,101,97,103,103,101,116,100",
-                        "endOffsets": "148,250,348,452,556,658,775,876"
-                    },
-                    "to": {
-                        "startLines": "33,34,35,36,37,38,39,91",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3294,3392,3494,3592,3696,3800,3902,9271",
-                        "endColumns": "97,101,97,103,103,101,116,100",
-                        "endOffsets": "3387,3489,3587,3691,3795,3897,4014,9367"
                     }
                 }
             ]

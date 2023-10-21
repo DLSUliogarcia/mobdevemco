@@ -1016,6 +1016,7 @@ int id auto 0x7f07004e
 int id autoComplete 0x7f07004f
 int id autoCompleteToEnd 0x7f070050
 int id autoCompleteToStart 0x7f070051
+int id backBtn 0x7f070157
 int id barrier 0x7f070052
 int id baseline 0x7f070053
 int id beginOnFirstDraw 0x7f070054
@@ -1032,6 +1033,7 @@ int id cache_measures 0x7f07005e
 int id callMeasure 0x7f07005f
 int id carryVelocity 0x7f070060
 int id catView 0x7f070061
+int id catView2 0x7f07014f
 int id center 0x7f070062
 int id center_vertical 0x7f070063
 int id chain 0x7f070064
@@ -1054,6 +1056,7 @@ int id cos 0x7f070074
 int id currentState 0x7f070075
 int id custom 0x7f070076
 int id customPanel 0x7f070077
+int id dateTv 0x7f070150
 int id decelerate 0x7f070078
 int id decelerateAndComplete 0x7f070079
 int id decor_content_parent 0x7f07007a
@@ -1089,7 +1092,9 @@ int id forever 0x7f070097
 int id frost 0x7f070098
 int id game_cat 0x7f070099
 int id game_livingRoom 0x7f07009a
+int id game_livingRoom2 0x7f070151
 int id game_mouse 0x7f07009b
+int id game_mouse2 0x7f070158
 int id gone 0x7f07009c
 int id graph 0x7f07009d
 int id graph_wrap 0x7f07009e
@@ -1099,6 +1104,7 @@ int id groups 0x7f0700a1
 int id hide_ime_id 0x7f0700a2
 int id hide_in_inspector_tag 0x7f0700a3
 int id highScoreBtn 0x7f0700a4
+int id highscoresRv 0x7f070152
 int id home 0x7f0700a5
 int id homeAsUp 0x7f0700a6
 int id honorRequest 0x7f0700a7
@@ -1164,8 +1170,10 @@ int id position 0x7f0700e2
 int id postLayout 0x7f0700e3
 int id progress_circular 0x7f0700e4
 int id progress_horizontal 0x7f0700e5
+int id purpleBg 0x7f070153
 int id quitBtn 0x7f0700e6
 int id radio 0x7f0700e7
+int id rankTv 0x7f070154
 int id ratio 0x7f0700e8
 int id rectangles 0x7f0700e9
 int id report_drawn 0x7f0700ea
@@ -1175,6 +1183,7 @@ int id right_icon 0x7f0700ed
 int id right_side 0x7f0700ee
 int id sawtooth 0x7f0700ef
 int id score 0x7f0700f0
+int id scoreTv 0x7f070155
 int id screen 0x7f0700f1
 int id scrollIndicatorDown 0x7f0700f2
 int id scrollIndicatorUp 0x7f0700f3
@@ -1239,6 +1248,7 @@ int id text 0x7f07012d
 int id text2 0x7f07012e
 int id textSpacerNoButtons 0x7f07012f
 int id textSpacerNoTitle 0x7f070130
+int id textView 0x7f070156
 int id time 0x7f070131
 int id title 0x7f070132
 int id titleDividerNoCustom 0x7f070133
@@ -1311,6 +1321,8 @@ int layout abc_select_dialog_material 0x7f0a001a
 int layout abc_tooltip 0x7f0a001b
 int layout custom_dialog 0x7f0a001c
 int layout game_layout 0x7f0a001d
+int layout highscore_data_layout 0x7f0a002b
+int layout highscores_layout 0x7f0a002c
 int layout ime_base_split_test_activity 0x7f0a001e
 int layout ime_secondary_split_test_activity 0x7f0a001f
 int layout notification_action 0x7f0a0020
