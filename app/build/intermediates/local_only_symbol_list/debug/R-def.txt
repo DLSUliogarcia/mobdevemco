@@ -10,6 +10,7 @@ color white
 drawable cat_a
 drawable cat_b
 drawable circle_btn
+drawable facebook_logo_36x36
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable living_room
@@ -23,6 +24,7 @@ id catView
 id catView2
 id continueBtn
 id dateTv
+id fbBtn
 id game_cat
 id game_livingRoom
 id game_livingRoom2

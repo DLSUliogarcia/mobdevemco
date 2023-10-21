@@ -76,7 +76,7 @@
         android:background="#B3404080"
         android:backgroundTint="#404080"
         android:orientation="vertical"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/game_livingRoom"

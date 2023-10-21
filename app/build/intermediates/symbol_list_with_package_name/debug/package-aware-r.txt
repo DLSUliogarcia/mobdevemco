@@ -909,6 +909,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable cat_a
 drawable cat_b
 drawable circle_btn
+drawable facebook_logo_36x36
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -1091,6 +1092,7 @@ id edit_text_id
 id end
 id expand_activities_button
 id expanded_menu
+id fbBtn
 id flip
 id forever
 id frost
