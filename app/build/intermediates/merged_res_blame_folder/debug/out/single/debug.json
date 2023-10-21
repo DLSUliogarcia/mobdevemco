@@ -24,6 +24,14 @@
         "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:/layout/start_layout.xml"
     },
     {
+        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:/drawable_sfx.png.flat",
+        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:/drawable/sfx.png"
+    },
+    {
+        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:/drawable_circle_btn.xml.flat",
+        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:/drawable/circle_btn.xml"
+    },
+    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:\\layout_game_layout.xml.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:\\layout\\game_layout.xml"
     },
@@ -34,6 +42,10 @@
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:/layout_game_layout.xml.flat",
+        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:/layout/game_layout.xml"
     },
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -70,6 +82,10 @@
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:\\drawable_round_btn.xml.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:\\drawable\\round_btn.xml"
+    },
+    {
+        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:/drawable_ost.png.flat",
+        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-51:/drawable/ost.png"
     },
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-49:\\layout_start_layout.xml.flat",
