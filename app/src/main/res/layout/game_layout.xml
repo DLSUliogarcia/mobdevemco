@@ -63,6 +63,7 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/round_btn"
         android:backgroundTint="#99808080"
+        android:padding="5dp"
         android:scaleType="fitXY"
         android:src="@drawable/pause"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +76,7 @@
         android:background="#B3404080"
         android:backgroundTint="#404080"
         android:orientation="vertical"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/game_livingRoom"
@@ -115,6 +116,43 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/game_soundBtnLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/game_sfxBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_btn"
+                android:backgroundTint="#A6FFFF00"
+                android:foregroundTint="#FFFF00"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/sfx" />
+
+            <ImageButton
+                android:id="@+id/game_ostBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_btn"
+                android:backgroundTint="#A6FFFF00"
+                android:foregroundTint="#404080"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ost" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,34 +68,61 @@
         app:layout_constraintStart_toStartOf="parent"
         android:src="@drawable/rat" />
 
-    <Button
-        android:id="@+id/settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round_btn"
-        android:backgroundTint="#A6404080"
-        android:text="SETTINGS"
-        android:textColor="#FFFF80"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/highScoreBtn" />
-
     <TextView
         android:id="@+id/titleView"
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#A6404080"
         android:fontFamily="sans-serif-condensed"
         android:text="CAT N' MOUSE"
+        android:textAlignment="center"
         android:textColor="#FFFF80"
-        android:textColorHighlight="#404080"
-        android:textSize="48sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/soundBtnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highScoreBtn">
+
+        <ImageButton
+            android:id="@+id/sfxBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_btn"
+            android:backgroundTint="#A6404080"
+            android:foregroundTint="#FFFF00"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/sfx" />
+
+        <ImageButton
+            android:id="@+id/ostBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_btn"
+            android:backgroundTint="#A6404080"
+            android:foregroundTint="#404080"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ost" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
