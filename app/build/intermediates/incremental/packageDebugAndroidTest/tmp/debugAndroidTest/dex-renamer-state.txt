@@ -1,7 +1,7 @@
-#Sat Oct 21 14:14:07 SGT 2023
-base.0=D\:\\AndroidStudio\\mobdevemco\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
-base.1=D\:\\AndroidStudio\\mobdevemco\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
-base.2=D\:\\AndroidStudio\\mobdevemco\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\4\\classes.dex
+#Sat Oct 21 16:28:00 PST 2023
+base.0=C\:\\Users\\Aurelio Garcia\\Documents\\COMSCI\\MOBDEVE\\mobdevemco\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=C\:\\Users\\Aurelio Garcia\\Documents\\COMSCI\\MOBDEVE\\mobdevemco\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=C\:\\Users\\Aurelio Garcia\\Documents\\COMSCI\\MOBDEVE\\mobdevemco\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\4\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=4/classes.dex

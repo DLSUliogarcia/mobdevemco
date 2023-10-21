@@ -4,7 +4,7 @@
             "outputFile": "com.mobdeve.s15.cabinbin.garcia.mco.app-mergeDebugResources-47:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rapid\\.gradle\\caches\\transforms-3\\e06d884f3e9890a0b602d349219a6365\\transformed\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\Aurelio Garcia\\.gradle\\caches\\transforms-3\\e06d884f3e9890a0b602d349219a6365\\transformed\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

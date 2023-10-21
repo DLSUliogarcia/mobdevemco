@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/game_livingRoom2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/living_room"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/game_mouse2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/rat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/catView2"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/cat_a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/purpleBg"
+        android:layout_width="319dp"
+        android:layout_height="496dp"
+        android:layout_marginTop="24dp"
+        android:background="#E45353AE"
+        android:src="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#A6404080"
+        android:text="High Scores"
+        android:textColor="#FFFF80"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/highscoresRv"
+        android:layout_width="307dp"
+        android:layout_height="488dp"
+        app:layout_constraintEnd_toEndOf="@+id/purpleBg"
+        app:layout_constraintStart_toStartOf="@+id/purpleBg"
+        app:layout_constraintTop_toTopOf="@+id/purpleBg" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="82dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
+        android:src="?android:attr/actionModeCloseDrawable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purpleBg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
