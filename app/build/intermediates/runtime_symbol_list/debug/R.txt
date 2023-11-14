@@ -905,8 +905,8 @@ int drawable btn_radio_off_mtrl 0x7f06005b
 int drawable btn_radio_off_to_on_mtrl_animation 0x7f06005c
 int drawable btn_radio_on_mtrl 0x7f06005d
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f06005e
-int drawable cat_a 0x7f06005f
-int drawable cat_b 0x7f060060
+int drawable cat_run 0x7f06005f
+int drawable cat_stare 0x7f060060
 int drawable circle_btn 0x7f060061
 int drawable facebook_logo_36x36 0x7f060062
 int drawable ic_call_answer 0x7f060063

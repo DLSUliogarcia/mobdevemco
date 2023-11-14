@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/cat_a" />
+        android:src="@drawable/cat_stare" />
 
     <ImageView
         android:id="@+id/mouseView"

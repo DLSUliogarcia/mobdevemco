@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-28:12
+ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:1-39:12
 MERGED from [androidx.compose.material3:material3:1.1.2] C:\Users\Aurelio Garcia\.gradle\caches\transforms-3\624a2deadee5db13613e1ade0ef94b6a\transformed\material3-1.1.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Aurelio Garcia\.gradle\caches\transforms-3\458507d5d28ed9d75d15683261ac51b6\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\Aurelio Garcia\.gradle\caches\transforms-3\8769f5c40aaccc9c074427264dacd78f\transformed\recyclerview-1.2.1\AndroidManifest.xml:17:1-24:12
@@ -72,8 +72,8 @@ MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Aurelio Garcia\.gradle\cac
 	xmlns:android
 		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:5:5-26:19
-INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:5:5-26:19
+ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:5:5-37:19
+INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:5:5-37:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Aurelio Garcia\.gradle\caches\transforms-3\458507d5d28ed9d75d15683261ac51b6\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Aurelio Garcia\.gradle\caches\transforms-3\458507d5d28ed9d75d15683261ac51b6\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.compose.ui:ui-test-manifest:1.5.3] C:\Users\Aurelio Garcia\.gradle\caches\transforms-3\7f30c8558aabdcd71f443101fda871d5\transformed\ui-test-manifest-1.5.3\AndroidManifest.xml:22:5-26:19
@@ -114,8 +114,8 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Aurelio Garcia\.gr
 		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:13:9-55
 	android:dataExtractionRules
 		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:7:9-65
-activity#com.mobdeve.s15.cabinbin.garcia.mco.MainActivity
-ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:15:9-25:20
+activity#com.mobdeve.s15.cabinbin.garcia.mco.StartActivity
+ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:15:9-24:20
 	android:label
 		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:18:13-45
 	android:exported
@@ -123,17 +123,37 @@ ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\m
 	android:theme
 		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:19:13-59
 	android:name
-		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:16:13-41
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:16:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:20:13-23:29
 action#android.intent.action.MAIN
 ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
 		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:22:27-74
+activity#com.mobdeve.s15.cabinbin.garcia.mco.GameActivity
+ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:25:9-30:20
+	android:label
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:28:13-45
+	android:exported
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:27:13-36
+	android:theme
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:29:13-59
+	android:name
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:26:13-41
+activity#com.mobdeve.s15.cabinbin.garcia.mco.HighScoreActivity
+ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:31:9-36:20
+	android:label
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:34:13-45
+	android:exported
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:33:13-36
+	android:theme
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:35:13-59
+	android:name
+		ADDED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml:32:13-46
 uses-sdk
 INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Aurelio Garcia\Documents\COMSCI\MOBDEVE\mobdevemco\app\src\main\AndroidManifest.xml

@@ -7,8 +7,8 @@ color purple_700
 color teal_200
 color teal_700
 color white
-drawable cat_a
-drawable cat_b
+drawable cat_run
+drawable cat_stare
 drawable circle_btn
 drawable facebook_logo_36x36
 drawable ic_launcher_background
