@@ -9,16 +9,23 @@ import android.widget.LinearLayout
 import androidx.activity.ComponentActivity
 
 class GameActivity : ComponentActivity() {
-    //Game Activity Buttons
+    //Game Threads
+    //GUI Thread: Canvas Loops BG Image
+    //OST Thread: Loops Garfield Animated Series Theme Song
+    //Score Thread: Increases Score on Layout File
+
+    //Pause Menu Buttons
     private lateinit var pauseBtn: ImageButton
     private lateinit var pauseMenu: LinearLayout
     private lateinit var contBtn: Button
     private lateinit var quitBtn: Button
+    private lateinit var sfxBtn: ImageButton
+    private lateinit var ostBtn: ImageButton
+
+    //Game Over Menu
     private lateinit var gameOverMenu: LinearLayout
     private lateinit var replayBtn: Button
     private lateinit var returnBtn: Button
-    private lateinit var sfxBtn: ImageButton
-    private lateinit var ostBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
