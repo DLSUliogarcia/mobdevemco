@@ -6,13 +6,10 @@
     android:layout_height="match_parent"
     android:visibility="visible">
 
-    <ImageView
-        android:id="@+id/game_livingRoom"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:adjustViewBounds="false"
-        android:scaleType="fitXY"
-        android:src="@drawable/living_room"
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +42,6 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="360"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
@@ -79,7 +75,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/game_livingRoom"
+        app:layout_constraintStart_toStartOf="@+id/surfaceView"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView

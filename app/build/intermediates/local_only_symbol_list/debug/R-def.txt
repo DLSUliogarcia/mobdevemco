@@ -19,6 +19,7 @@ drawable pause
 drawable rat
 drawable round_btn
 drawable sfx
+drawable wallpaper_bg
 id backBtn
 id catView
 id catView2
@@ -26,7 +27,6 @@ id continueBtn
 id dateTv
 id fbBtn
 id game_cat
-id game_livingRoom
 id game_livingRoom2
 id game_mouse
 id game_mouse2
@@ -49,6 +49,7 @@ id scoreTv
 id sfxBtn
 id soundBtnLayout
 id startBtn
+id surfaceView
 id textView
 id titleView
 layout game_layout

@@ -7,6 +7,9 @@ import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 
 class StartActivity : ComponentActivity() {
+    //Start Threads
+    //OST Thread
+
     //Start Activity Buttons
     private lateinit var startBtn: Button
     private lateinit var highScoreBtn: Button
@@ -37,4 +40,7 @@ class StartActivity : ComponentActivity() {
         //Music Button
         this.ostBtn = findViewById(R.id.ostBtn)
     }
-}
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }}

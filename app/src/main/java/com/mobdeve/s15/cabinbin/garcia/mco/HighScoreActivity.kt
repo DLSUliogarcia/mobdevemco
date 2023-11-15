@@ -38,4 +38,8 @@ class HighScoreActivity:ComponentActivity() {
             Toast.makeText(this, "FB Share!", Toast.LENGTH_SHORT).show()
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
 }

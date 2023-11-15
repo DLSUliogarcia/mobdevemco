@@ -939,6 +939,7 @@ drawable round_btn
 drawable sfx
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable wallpaper_bg
 id ALT
 id CTRL
 id FUNCTION
@@ -1097,7 +1098,6 @@ id flip
 id forever
 id frost
 id game_cat
-id game_livingRoom
 id game_livingRoom2
 id game_mouse
 id game_mouse2
@@ -1241,6 +1241,7 @@ id stop
 id submenuarrow
 id submit_area
 id supportScrollUp
+id surfaceView
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
