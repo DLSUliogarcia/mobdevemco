@@ -932,6 +932,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable off
 drawable ost
 drawable pause
 drawable rat
@@ -1097,6 +1098,7 @@ id fbBtn
 id flip
 id forever
 id frost
+id game_background
 id game_cat
 id game_livingRoom2
 id game_mouse
@@ -1241,7 +1243,6 @@ id stop
 id submenuarrow
 id submit_area
 id supportScrollUp
-id surfaceView
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -1350,6 +1351,8 @@ layout start_layout
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw game_ost
+raw start_ost
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

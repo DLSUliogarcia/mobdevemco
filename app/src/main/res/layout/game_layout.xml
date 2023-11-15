@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     android:visibility="visible">
 
-    <SurfaceView
-        android:id="@+id/surfaceView"
+    <ImageView
+        android:id="@+id/game_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="false" />
 
     <ImageView
         android:id="@+id/game_cat"
@@ -75,7 +73,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/surfaceView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -130,7 +128,7 @@
                 android:background="@drawable/circle_btn"
                 android:backgroundTint="#A6FFFF00"
                 android:foregroundTint="#FFFF00"
-                android:padding="5dp"
+                android:padding="7dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/sfx" />
 
@@ -143,7 +141,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_btn"
                 android:backgroundTint="#A6FFFF00"
-                android:foregroundTint="#404080"
+                android:foregroundTint="#000000"
                 android:padding="10dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ost" />

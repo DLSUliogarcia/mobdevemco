@@ -14,6 +14,7 @@ drawable facebook_logo_36x36
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable living_room
+drawable off
 drawable ost
 drawable pause
 drawable rat
@@ -26,6 +27,7 @@ id catView2
 id continueBtn
 id dateTv
 id fbBtn
+id game_background
 id game_cat
 id game_livingRoom2
 id game_mouse
@@ -49,7 +51,6 @@ id scoreTv
 id sfxBtn
 id soundBtnLayout
 id startBtn
-id surfaceView
 id textView
 id titleView
 layout game_layout
@@ -58,6 +59,8 @@ layout highscores_layout
 layout start_layout
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw game_ost
+raw start_ost
 string app_name
 style Theme.CabinbinGarciaMCO
 xml backup_rules
