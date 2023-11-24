@@ -7,6 +7,7 @@ color purple_700
 color teal_200
 color teal_700
 color white
+drawable background
 drawable cat_run
 drawable cat_stare
 drawable circle_btn
@@ -20,14 +21,12 @@ drawable pause
 drawable rat
 drawable round_btn
 drawable sfx
-drawable wallpaper_bg
 id backBtn
 id catView
 id catView2
 id continueBtn
 id dateTv
 id fbBtn
-id game_background
 id game_cat
 id game_livingRoom2
 id game_mouse
@@ -48,6 +47,7 @@ id quitBtn
 id rankTv
 id score
 id scoreTv
+id scrollingBG
 id sfxBtn
 id soundBtnLayout
 id startBtn

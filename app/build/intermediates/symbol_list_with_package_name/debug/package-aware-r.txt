@@ -161,6 +161,7 @@ attr contentInsetLeft
 attr contentInsetRight
 attr contentInsetStart
 attr contentInsetStartWithNavigation
+attr contiguous
 attr contrast
 attr controlBackground
 attr crossfade
@@ -270,6 +271,7 @@ attr imageRotate
 attr imageZoom
 attr indeterminateProgressStyle
 attr initialActivityCount
+attr initialState
 attr isLightTheme
 attr itemPadding
 attr keyPositionType
@@ -435,6 +437,7 @@ attr queryBackground
 attr queryHint
 attr queryPatterns
 attr radioButtonStyle
+attr randomness
 attr ratingBarStyle
 attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
@@ -453,6 +456,7 @@ attr round
 attr roundPercent
 attr saturation
 attr scaleFromTextSize
+attr sceneLength
 attr searchHintIcon
 attr searchIcon
 attr searchViewStyle
@@ -468,7 +472,9 @@ attr showText
 attr showTitle
 attr singleChoiceItemLayout
 attr sizePercent
+attr source
 attr spanCount
+attr speed
 attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
@@ -898,6 +904,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable background
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -940,7 +947,6 @@ drawable round_btn
 drawable sfx
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-drawable wallpaper_bg
 id ALT
 id CTRL
 id FUNCTION
@@ -1098,7 +1104,6 @@ id fbBtn
 id flip
 id forever
 id frost
-id game_background
 id game_cat
 id game_livingRoom2
 id game_mouse
@@ -1200,6 +1205,7 @@ id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollingBG
 id search_badge
 id search_bar
 id search_button
@@ -1237,9 +1243,11 @@ id start
 id startBtn
 id startHorizontal
 id startVertical
+id started
 id staticLayout
 id staticPostLayout
 id stop
+id stopped
 id submenuarrow
 id submit_area
 id supportScrollUp
@@ -1881,6 +1889,7 @@ styleable PopupWindowBackgroundState state_above_anchor
 styleable PropertySet android_visibility android_alpha layout_constraintTag motionProgress visibilityMode
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable ScrollingImageView contiguous initialState randomness sceneLength source speed
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable State android_id constraints

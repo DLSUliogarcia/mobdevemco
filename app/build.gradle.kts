@@ -50,7 +50,7 @@ android {
 }
 
 dependencies {
-
+    implementation ("com.github.Q42:AndroidScrollingImageView:1.3.4")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.core:core-ktx:1.12.0")

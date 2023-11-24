@@ -4,21 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"
     android:visibility="visible">
 
-    <ImageView
-        android:id="@+id/game_background"
+    <com.q42.android.scrollingimageview.ScrollingImageView
+        android:id="@+id/scrollingBG"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="false" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:scaleY="0.65"
+        scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
+        scrolling_image_view:layout_constraintEnd_toEndOf="parent"
+        scrolling_image_view:layout_constraintStart_toStartOf="parent"
+        scrolling_image_view:layout_constraintTop_toTopOf="parent"
+        scrolling_image_view:source="@drawable/background"
+        scrolling_image_view:speed="120dp" />
 
     <ImageView
         android:id="@+id/game_cat"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="24dp"
         android:src="@drawable/cat_run"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -27,11 +33,10 @@
         android:id="@+id/game_mouse"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
         android:src="@drawable/rat"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/game_cat" />
 
     <TextView
         android:id="@+id/score"
