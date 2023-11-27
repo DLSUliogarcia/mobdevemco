@@ -27,6 +27,7 @@ id catView2
 id continueBtn
 id dateTv
 id fbBtn
+id game_bg
 id game_cat
 id game_livingRoom2
 id game_mouse

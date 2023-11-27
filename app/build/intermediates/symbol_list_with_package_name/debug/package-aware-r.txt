@@ -1104,6 +1104,7 @@ id fbBtn
 id flip
 id forever
 id frost
+id game_bg
 id game_cat
 id game_livingRoom2
 id game_mouse

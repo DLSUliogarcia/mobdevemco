@@ -1,5 +1,9 @@
 package com.mobdeve.s15.cabinbin.garcia.mco
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -11,10 +15,21 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import android.media.MediaPlayer
+import android.view.MotionEvent
+import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.q42.android.scrollingimageview.ScrollingImageView
 
 class GameActivity : ComponentActivity() {
+    //Cat
+    private lateinit var cat: ImageView
+    private var isCatMidair = false
+    private lateinit var catJumpAnimatorSet: AnimatorSet
+    private lateinit var catJumpAnimator: ObjectAnimator
+    private lateinit var catFallAnimator: ObjectAnimator
+
     //Background Thread
+    private lateinit var screenLayout: ConstraintLayout
     private lateinit var background: ScrollingImageView
 
     //OST Thread
@@ -31,6 +46,7 @@ class GameActivity : ComponentActivity() {
 
     //Pause Menu Buttons
     private lateinit var pauseBtn: ImageButton
+    private var isGamePaused = false
     private lateinit var pauseMenu: LinearLayout
     private lateinit var contBtn: Button
     private lateinit var quitBtn: Button
@@ -52,6 +68,25 @@ class GameActivity : ComponentActivity() {
         this.background = findViewById(R.id.scrollingBG)
         this.background.start()
 
+        //Cat
+        // Inside onCreate() method
+        this.cat = findViewById(R.id.game_cat)
+        this.catJumpAnimatorSet = AnimatorSet()
+
+        //Screen
+        this.screenLayout = findViewById(R.id.game_bg)
+        this.screenLayout.setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    // Perform the jump animation if the cat is not midair
+                    if (!this.isCatMidair) {
+                        catJump()
+                    }
+                }
+            }
+            true
+        }
+
         //Music
         this.ostPlayer = MediaPlayer.create(this, R.raw.game_ost)
         initMusicHandler()
@@ -61,16 +96,20 @@ class GameActivity : ComponentActivity() {
         this.pauseMenu = findViewById(R.id.pauseMenu)
         this.pauseMenu.visibility = View.INVISIBLE
         this.pauseBtn.setOnClickListener{
+            this.isGamePaused = true
             this.background.stop()
             this.pauseMenu.visibility = View.VISIBLE
             this.scoreHandler.removeCallbacks(this.scoreRunnable)
+            pauseCatAnimation()
         }
         //Pause Menu: Continue Button
         this.contBtn = findViewById(R.id.continueBtn)
         this.contBtn.setOnClickListener{
+            this.isGamePaused = false
             this.background.start()
             this.pauseMenu.visibility = View.INVISIBLE
             this.scoreHandler.postDelayed(this.scoreRunnable, 500)
+            resumeCatAnimation()
         }
         //Pause Menu: Quit Button
         this.quitBtn = findViewById(R.id.quitBtn)
@@ -115,12 +154,6 @@ class GameActivity : ComponentActivity() {
         this.scoreHandler.removeCallbacks(this.scoreRunnable)
     }
 
-    private fun initBGHandler() {
-    }
-
-    private fun drawBackground() {
-    }
-
     //Music Handler
     private fun initMusicHandler() {
         this.ostHandler = Handler(Looper.getMainLooper())
@@ -144,6 +177,52 @@ class GameActivity : ComponentActivity() {
     private fun increaseScore() {
         this.score++
         this.scoreTextView.text = this.score.toString()
+    }
+
+    private fun catJump() {
+        if (!isCatMidair && !isGamePaused) {
+            isCatMidair = true
+            val jumpHeight = 300f // Adjust the jump height as needed
+
+            // Create the jump animation
+            this.catJumpAnimator = ObjectAnimator.ofFloat(cat, "translationY", -jumpHeight)
+            this.catJumpAnimator.duration = 500 // Adjust the duration of the jump animation as needed
+
+            // Create the fall animation
+            this.catFallAnimator = ObjectAnimator.ofFloat(cat, "translationY", 0f)
+            this.catFallAnimator.duration = 500 // Adjust the duration of the fall animation as needed
+
+            // Play the jump and fall animations sequentially
+            this.catJumpAnimatorSet = AnimatorSet()
+            this.catJumpAnimatorSet.playSequentially(this.catJumpAnimator , this.catFallAnimator)
+
+            // Set the listener to update isCatMidair to false after the fall animation
+            this.catJumpAnimatorSet.addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    isCatMidair = false
+                }
+            })
+
+            this.catJumpAnimatorSet.start()
+        }
+    }
+
+    private fun pauseCatAnimation() {
+        if (this.catJumpAnimator.isRunning) {
+            this.catJumpAnimator.pause()
+        }
+        if (this.catFallAnimator.isRunning) {
+            this.catFallAnimator.pause()
+        }
+    }
+
+    private fun resumeCatAnimation() {
+        if (this.catJumpAnimator.isPaused) {
+            this.catJumpAnimator.resume()
+        }
+        if (this.catFallAnimator.isPaused) {
+            this.catFallAnimator.resume()
+        }
     }
 
 }
