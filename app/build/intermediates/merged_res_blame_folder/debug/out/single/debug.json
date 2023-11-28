@@ -36,6 +36,14 @@
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\off.png"
     },
     {
+        "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_bookshelf.png.flat",
+        "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\bookshelf.png"
+    },
+    {
+        "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_sofa.png.flat",
+        "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\sofa.png"
+    },
+    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
@@ -68,12 +76,20 @@
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\sfx.png"
     },
     {
+        "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_lamp.png.flat",
+        "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\lamp.png"
+    },
+    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_circle_btn.xml.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\circle_btn.xml"
     },
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_pause.png.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\pause.png"
+    },
+    {
+        "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_side_table.png.flat",
+        "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\side_table.png"
     },
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_background.png.flat",

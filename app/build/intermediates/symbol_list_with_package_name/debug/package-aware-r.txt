@@ -905,6 +905,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable background
+drawable bookshelf
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -925,6 +926,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable lamp
 drawable living_room
 drawable notification_action_background
 drawable notification_bg
@@ -945,6 +947,8 @@ drawable pause
 drawable rat
 drawable round_btn
 drawable sfx
+drawable side_table
+drawable sofa
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1109,6 +1113,10 @@ id game_cat
 id game_livingRoom2
 id game_mouse
 id game_mouse2
+id game_obstacle0
+id game_obstacle1
+id game_obstacle2
+id game_obstacle3
 id game_ostBtn
 id game_sfxBtn
 id game_soundBtnLayout

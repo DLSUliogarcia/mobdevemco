@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/game_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,6 +38,54 @@
         android:src="@drawable/rat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/game_cat" />
+
+    <ImageView
+        android:id="@+id/game_obstacle0"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/side_table"
+        android:visibility="gone"
+        scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
+        scrolling_image_view:layout_constraintStart_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/game_obstacle1"
+        android:layout_width="120dp"
+        android:layout_height="360dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/lamp"
+        android:visibility="gone"
+        scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
+        scrolling_image_view:layout_constraintStart_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/game_obstacle2"
+        android:layout_width="120dp"
+        android:layout_height="240dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bookshelf"
+        android:visibility="gone"
+        scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
+        scrolling_image_view:layout_constraintStart_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/game_obstacle3"
+        android:layout_width="300dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/sofa"
+        android:visibility="gone"
+        scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
+        scrolling_image_view:layout_constraintStart_toEndOf="parent"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/score"

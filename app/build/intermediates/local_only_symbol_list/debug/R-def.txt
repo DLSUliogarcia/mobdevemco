@@ -8,12 +8,14 @@ color teal_200
 color teal_700
 color white
 drawable background
+drawable bookshelf
 drawable cat_run
 drawable cat_stare
 drawable circle_btn
 drawable facebook_logo_36x36
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable lamp
 drawable living_room
 drawable off
 drawable ost
@@ -21,6 +23,8 @@ drawable pause
 drawable rat
 drawable round_btn
 drawable sfx
+drawable side_table
+drawable sofa
 id backBtn
 id catView
 id catView2
@@ -32,6 +36,10 @@ id game_cat
 id game_livingRoom2
 id game_mouse
 id game_mouse2
+id game_obstacle0
+id game_obstacle1
+id game_obstacle2
+id game_obstacle3
 id game_ostBtn
 id game_sfxBtn
 id game_soundBtnLayout
