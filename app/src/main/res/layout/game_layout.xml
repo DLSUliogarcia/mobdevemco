@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:speed="150dp"
+        app:speed="240dp"
         scrolling_image_view:source="@drawable/background" />
 
     <ImageView
@@ -41,11 +41,11 @@
 
     <ImageView
         android:id="@+id/game_obstacle0"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="12dp"
         android:scaleType="fitXY"
-        android:src="@drawable/side_table"
+        android:src="@drawable/dog"
         android:visibility="gone"
         scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
         scrolling_image_view:layout_constraintStart_toEndOf="parent"
@@ -53,11 +53,11 @@
 
     <ImageView
         android:id="@+id/game_obstacle1"
-        android:layout_width="120dp"
-        android:layout_height="360dp"
+        android:layout_width="90dp"
+        android:layout_height="180dp"
         android:layout_marginBottom="12dp"
         android:scaleType="fitXY"
-        android:src="@drawable/lamp"
+        android:src="@drawable/grandpa"
         android:visibility="gone"
         scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
         scrolling_image_view:layout_constraintStart_toEndOf="parent"
@@ -65,11 +65,11 @@
 
     <ImageView
         android:id="@+id/game_obstacle2"
-        android:layout_width="120dp"
-        android:layout_height="240dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="12dp"
         android:scaleType="fitXY"
-        android:src="@drawable/bookshelf"
+        android:src="@drawable/baby"
         android:visibility="gone"
         scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
         scrolling_image_view:layout_constraintStart_toEndOf="parent"
@@ -77,11 +77,11 @@
 
     <ImageView
         android:id="@+id/game_obstacle3"
-        android:layout_width="300dp"
-        android:layout_height="180dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="12dp"
         android:scaleType="fitXY"
-        android:src="@drawable/sofa"
+        android:src="@drawable/hamster"
         android:visibility="gone"
         scrolling_image_view:layout_constraintBottom_toBottomOf="parent"
         scrolling_image_view:layout_constraintStart_toEndOf="parent"
@@ -119,6 +119,77 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/gameOver"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="#FFC800"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/scrollingBG"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="SCORE"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/finalScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="34sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <ImageButton
+                android:id="@+id/shareBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="#40BEFF"
+                android:scaleType="fitXY"
+                android:src="@drawable/share" />
+
+            <ImageButton
+                android:id="@+id/replayBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FF8000"
+                android:scaleType="fitXY"
+                android:src="@drawable/replay" />
+
+            <ImageButton
+                android:id="@+id/homeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00FF00"
+                android:scaleType="fitXY"
+                android:src="@drawable/home" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/pauseMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -129,7 +200,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
 
         <TextView
             android:id="@+id/pauseText"

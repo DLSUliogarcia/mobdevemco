@@ -35,6 +35,7 @@ class StartActivity : ComponentActivity() {
         //Start Button
         this.startBtn = findViewById(R.id.startBtn)
         this.startBtn.setOnClickListener{
+            onDestroy()
             startActivity(Intent(this, GameActivity::class.java))
         }
 
