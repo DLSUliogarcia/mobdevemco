@@ -50,7 +50,7 @@ class GameActivity : ComponentActivity() {
     //Obstacles
     private lateinit var obstacles : Array<ImageView>
     private lateinit var obstacleBitmap : Bitmap
-    private lateinit var obstacleHandlerThread: HandlerThread
+    private lateinit var obstacleThread: HandlerThread
     @Volatile private var obstacleVal = 0
     @Volatile private var lapseVal: Long = 675
     private var distance = 0
@@ -60,18 +60,20 @@ class GameActivity : ComponentActivity() {
 
     //OST
     private lateinit var ostPlayer: MediaPlayer
-    private lateinit var ostHandlerThread: HandlerThread
+    private lateinit var ostThread: HandlerThread
     private lateinit var ostHandler: Handler
     private lateinit var ostRunnable: Runnable
     private var isOSTPlaying = true
 
     //SFX
     private var isSFXOn = true
+    private lateinit var jumpThread: HandlerThread
+    private lateinit var jumpHandler: Handler
     private lateinit var jumpSFX: MediaPlayer
     private lateinit var gameOverSFX : MediaPlayer
 
     //Score
-    private lateinit var scoreHandlerThread: HandlerThread
+    private lateinit var scoreThread: HandlerThread
     private lateinit var scoreHandler: Handler
     private lateinit var scoreRunnable: Runnable
     private lateinit var scoreTextView: TextView
@@ -108,21 +110,24 @@ class GameActivity : ComponentActivity() {
         //Score Updater
         //Increases Score by 1 Every Half-Second
         this.scoreTextView = findViewById(R.id.score)
-        this.scoreHandlerThread = HandlerThread("ScoreHandlerThread")
-        this.scoreHandlerThread.start()
-        this.scoreHandler = Handler(this.scoreHandlerThread.looper)
+        this.scoreThread = HandlerThread("ScoreHandlerThread")
+        this.scoreThread.start()
+        this.scoreHandler = Handler(this.scoreThread.looper)
 
         //Music
         this.ostPlayer = MediaPlayer.create(this, R.raw.game_ost)
-        this.ostHandlerThread = HandlerThread("OSTHandlerThread")
-        this.ostHandlerThread.start()
-        this.ostHandler = Handler(this.ostHandlerThread.looper)
+        this.ostThread = HandlerThread("OSTHandlerThread")
+        this.ostThread.start()
+        this.ostHandler = Handler(this.ostThread.looper)
 
-        //SFX
+        //Jump SFX
         this.jumpSFX = MediaPlayer.create(this, R.raw.jump_sfx)
-        //this.jumpSFX.prepare()
+        this.jumpThread = HandlerThread("JumpHandlerThread")
+        this.jumpThread.start()
+        this.jumpHandler = Handler(this.jumpThread.looper)
+
+        //Game Over SFX
         this.gameOverSFX = MediaPlayer.create(this, R.raw.gameover_sfx)
-        //this.gameOverSFX.prepare()
 
         //Background
         this.background = findViewById(R.id.scrollingBG)
@@ -173,7 +178,7 @@ class GameActivity : ComponentActivity() {
                     this.touchStartTime = System.currentTimeMillis()
                     this.screenLayout.postDelayed({
                         if (this.isGameRunning && !this.isCatMidair) {
-                            this.jumpSFX.start()
+                            playJumpSFX()
                             catHiJump()
                         }
                     }, 150)
@@ -183,7 +188,7 @@ class GameActivity : ComponentActivity() {
                     if (this.isGameRunning && !this.isCatMidair) {
                         val touchDuration = System.currentTimeMillis() - this.touchStartTime
                         if (touchDuration < 151) {
-                            this.jumpSFX.start()
+                            playJumpSFX()
                             catJump()
                         }
                     }
@@ -205,9 +210,9 @@ class GameActivity : ComponentActivity() {
         )
         this.obstacleBitmap = BitmapFactory.decodeResource(resources, R.drawable.dog)
         this.obstacleAnimator = ObjectAnimator.ofFloat(this.obstacles[0], View.TRANSLATION_X, -(this.distance.toFloat()))
-        this.obstacleHandlerThread = HandlerThread("ObstacleHandlerThread")
-        this.obstacleHandlerThread.start()
-        this.obstacleHandler = Handler(this.obstacleHandlerThread.looper)
+        this.obstacleThread = HandlerThread("ObstacleHandlerThread")
+        this.obstacleThread.start()
+        this.obstacleHandler = Handler(this.obstacleThread.looper)
 
         //Pause Menu
         this.pauseMenu = findViewById(R.id.pauseMenu)
@@ -290,15 +295,6 @@ class GameActivity : ComponentActivity() {
         this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
     }
 
-    private fun restartGame() {
-        // Finish the current instance of GameActivity
-        finish()
-
-        // Start a new instance of GameActivity
-        val intent = Intent(this, GameActivity::class.java)
-        startActivity(intent)
-    }
-
     private fun gameOver() {
         //Game Stops
         this.isGameRunning = false
@@ -306,9 +302,7 @@ class GameActivity : ComponentActivity() {
         //Stop Sound FX
         this.jumpSFX.stop()
         this.jumpSFX.release()
-
-        //Play Game Over Sound
-        this.gameOverSFX.start()
+        this.jumpThread.quitSafely()
 
         //Make Pause Button Disappear
         this.pauseBtn.visibility = View.INVISIBLE
@@ -318,13 +312,13 @@ class GameActivity : ComponentActivity() {
 
         //Stop Score Thread
         this.scoreHandler.removeCallbacks(this.scoreRunnable)
-        this.scoreHandlerThread.quitSafely()
+        this.scoreThread.quitSafely()
 
         //Stop OST Handler
         this.ostPlayer.stop()
         this.ostPlayer.release()
         this.ostHandler.removeCallbacks(this.ostRunnable)
-        this.ostHandlerThread.quitSafely()
+        this.ostThread.quitSafely()
 
         //Stop Animations
         this.catJumpAnimatorSet.cancel()
@@ -332,7 +326,10 @@ class GameActivity : ComponentActivity() {
 
         //Stop Obstacle Handler
         this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
-        this.obstacleHandlerThread.quitSafely()
+        this.obstacleThread.quitSafely()
+
+        //Play Game Over Sound
+        this.gameOverSFX.start()
 
         //Cat Crash Animations
         this.cat.setImageResource(R.drawable.crash)
@@ -345,20 +342,29 @@ class GameActivity : ComponentActivity() {
         this.homeBtn.setOnClickListener{
             this.gameOverSFX.stop()
             this.gameOverSFX.release()
-            this.scoreHandlerThread.quit()
-            this.ostHandlerThread.quit()
-            this.obstacleHandlerThread.quit()
+            this.jumpThread.quit()
+            this.scoreThread.quit()
+            this.ostThread.quit()
+            this.obstacleThread.quit()
             finish()
             startActivity(Intent(this, StartActivity::class.java))
         }
         this.replayBtn.setOnClickListener{
             this.gameOverSFX.stop()
             this.gameOverSFX.release()
-            this.scoreHandlerThread.quit()
-            this.ostHandlerThread.quit()
-            this.obstacleHandlerThread.quit()
+            this.scoreThread.quit()
+            this.jumpThread.quit()
+            this.ostThread.quit()
+            this.obstacleThread.quit()
             finish()
             startActivity(Intent(this, GameActivity::class.java))
+        }
+    }
+
+    //Jump SFX Handler
+    private fun playJumpSFX() {
+        this.jumpHandler.post {
+            this.jumpSFX.start()
         }
     }
 

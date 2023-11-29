@@ -35,13 +35,14 @@ class StartActivity : ComponentActivity() {
         //Start Button
         this.startBtn = findViewById(R.id.startBtn)
         this.startBtn.setOnClickListener{
-            onDestroy()
+            finish()
             startActivity(Intent(this, GameActivity::class.java))
         }
 
         //High Scores Button
         this.highScoreBtn = findViewById(R.id.highScoreBtn)
         this.highScoreBtn.setOnClickListener {
+            finish()
             startActivity(Intent(this, HighScoreActivity::class.java))
         }
 
