@@ -28,6 +28,10 @@
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:/layout_start_layout.xml.flat",
+        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:/layout/start_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
@@ -116,10 +120,6 @@
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:/raw_gameover_sfx.mp3.flat",
-        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:/raw/gameover_sfx.mp3"
-    },
-    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_ost.png.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\ost.png"
     },
@@ -134,6 +134,10 @@
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_crown.png.flat",
+        "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\crown.png"
     },
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_hamster.png.flat",
@@ -166,10 +170,6 @@
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\raw_gameover_sfx.mp3.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\raw\\gameover_sfx.mp3"
-    },
-    {
-        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:/raw_jump_sfx.mp3.flat",
-        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:/raw/jump_sfx.mp3"
     },
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_share.png.flat",

@@ -13,6 +13,7 @@ drawable cat_run
 drawable cat_stare
 drawable circle_btn
 drawable crash
+drawable crown
 drawable dog
 drawable facebook_logo_36x36
 drawable grandpa
@@ -36,9 +37,11 @@ id continueBtn
 id dateTv
 id fbBtn
 id finalScore
+id finalScoreLayout
 id gameOver
 id game_bg
 id game_cat
+id game_crown
 id game_livingRoom2
 id game_mouse
 id game_mouse2
@@ -50,6 +53,7 @@ id game_ostBtn
 id game_sfxBtn
 id game_soundBtnLayout
 id highScoreBtn
+id highScoreLayout
 id highscoresRv
 id homeBtn
 id livingRoom
@@ -63,13 +67,14 @@ id quitBtn
 id rankTv
 id replayBtn
 id score
-id scoreText
+id scoreBtns
 id scoreTv
 id scrollingBG
 id sfxBtn
 id shareBtn
 id soundBtnLayout
 id startBtn
+id start_highScore
 id textView
 id titleView
 layout game_layout

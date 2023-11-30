@@ -6,6 +6,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -63,10 +64,8 @@ class GameActivity : ComponentActivity() {
     private lateinit var ostThread: HandlerThread
     private lateinit var ostHandler: Handler
     private lateinit var ostRunnable: Runnable
-    private var isOSTPlaying = true
 
     //SFX
-    private var isSFXOn = true
     private lateinit var jumpThread: HandlerThread
     private lateinit var jumpHandler: Handler
     private lateinit var jumpSFX: MediaPlayer
@@ -95,11 +94,26 @@ class GameActivity : ComponentActivity() {
     private lateinit var homeBtn: ImageButton
     private lateinit var shareBtn: ImageButton
 
+    //Shared Preferences
+    private lateinit var sharedPrefs: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
+    private val prefsName = "MyPrefs"
+    private val sfxCheck = "sfxActive"
+    private val ostCheck = "ostActive"
+    private val scoreCheck = "highScore"
+    private var isOSTPlaying = true                         //OST Activation
+    private var isSFXOn = true                              //SFX Activation
+    private var highScore: Long = 0                         //Game's High Score
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Start Menu Layout
         setContentView(R.layout.game_layout)
+
+        //Shared Prefs
+        loadPrefs()
+
         //Game Over Menu
         this.gameOverMenu = findViewById(R.id.gameOver)
         this.finalScore = findViewById(R.id.finalScore)
@@ -107,27 +121,44 @@ class GameActivity : ComponentActivity() {
         this.replayBtn = findViewById(R.id.replayBtn)
         this.shareBtn = findViewById(R.id.shareBtn)
 
-        //Score Updater
-        //Increases Score by 1 Every Half-Second
+        //Score Updater: Increases Score by 1 Every Half-Second
         this.scoreTextView = findViewById(R.id.score)
         this.scoreThread = HandlerThread("ScoreHandlerThread")
         this.scoreThread.start()
         this.scoreHandler = Handler(this.scoreThread.looper)
 
         //Music
+        this.ostBtn = findViewById(R.id.game_ostBtn)
         this.ostPlayer = MediaPlayer.create(this, R.raw.game_ost)
+        if(this.isOSTPlaying){
+            this.ostBtn.foreground = null
+            this.ostPlayer.setVolume(1f,1f)
+        }
+        else{
+            this.ostBtn.foreground = getDrawable(R.drawable.off)
+            this.ostPlayer.setVolume(0f,0f)
+        }
         this.ostThread = HandlerThread("OSTHandlerThread")
         this.ostThread.start()
         this.ostHandler = Handler(this.ostThread.looper)
 
         //Jump SFX
+        this.sfxBtn = findViewById(R.id.game_sfxBtn)
         this.jumpSFX = MediaPlayer.create(this, R.raw.jump_sfx)
+        this.gameOverSFX = MediaPlayer.create(this, R.raw.gameover_sfx)
+        if(isSFXOn){
+            this.sfxBtn.foreground = null
+            this.jumpSFX.setVolume(1f,1f)
+            this.gameOverSFX.setVolume(1f,1f)
+        }
+        else{
+            this.sfxBtn.foreground = getDrawable(R.drawable.off)
+            this.jumpSFX.setVolume(0f,0f)
+            this.gameOverSFX.setVolume(0f,0f)
+        }
         this.jumpThread = HandlerThread("JumpHandlerThread")
         this.jumpThread.start()
         this.jumpHandler = Handler(this.jumpThread.looper)
-
-        //Game Over SFX
-        this.gameOverSFX = MediaPlayer.create(this, R.raw.gameover_sfx)
 
         //Background
         this.background = findViewById(R.id.scrollingBG)
@@ -242,10 +273,30 @@ class GameActivity : ComponentActivity() {
         //Pause Menu: Quit Button
         this.quitBtn = findViewById(R.id.quitBtn)
         this.quitBtn.setOnClickListener{
+            /**/
+            this.isGameRunning = false
+            this.jumpSFX.stop()
+            this.jumpSFX.release()
+            this.jumpThread.quitSafely()
+            this.background.stop()
+            this.ostPlayer.stop()
+            this.ostPlayer.release()
+            this.ostHandler.removeCallbacks(this.ostRunnable)
+            this.ostThread.quitSafely()
+            this.catJumpAnimatorSet.cancel()
+            this.obstacleAnimator.cancel()
+            this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
+            this.obstacleThread.quitSafely()
+            this.gameOverSFX.stop()
+            this.gameOverSFX.release()
+            this.jumpThread.quit()
+            this.scoreThread.quit()
+            this.ostThread.quit()
+            this.obstacleThread.quit()
+            finish()
             startActivity(Intent(this, StartActivity::class.java))
         }
         //Pause Menu: OST Button
-        this.ostBtn = findViewById(R.id.game_ostBtn)
         this.ostBtn.setOnClickListener{
             if (this.isOSTPlaying){
                 this.ostBtn.foreground = getDrawable(R.drawable.off)
@@ -256,9 +307,10 @@ class GameActivity : ComponentActivity() {
                 this.ostPlayer.setVolume(1f,1f)
             }
             this.isOSTPlaying = !this.isOSTPlaying
+            this.editor.putBoolean(ostCheck, this.isOSTPlaying)
+            this.editor.apply()
         }
         //Pause Menu: SFX Button
-        this.sfxBtn = findViewById(R.id.game_sfxBtn)
         this.sfxBtn.setOnClickListener{
             if (this.isSFXOn){
                 this.sfxBtn.foreground = getDrawable(R.drawable.off)
@@ -271,6 +323,8 @@ class GameActivity : ComponentActivity() {
                 this.gameOverSFX.setVolume(1f,1f)
             }
             this.isSFXOn = !this.isSFXOn
+            this.editor.putBoolean(sfxCheck, this.isSFXOn)
+            this.editor.apply()
         }
 
         //Initialize Game
@@ -338,7 +392,16 @@ class GameActivity : ComponentActivity() {
 
         //Game Over Menu
         this.gameOverMenu.visibility = View.VISIBLE
+
+        //High Score
         this.finalScore.text = this.score.toString()
+        if(this.score > this.highScore){
+            findViewById<ImageView>(R.id.game_crown).visibility = View.VISIBLE
+            this.editor.putLong(this.scoreCheck, this.score)
+            this.editor.apply()
+        }
+
+        //Game Over Menu: Buttons
         this.homeBtn.setOnClickListener{
             this.gameOverSFX.stop()
             this.gameOverSFX.release()
@@ -456,9 +519,6 @@ class GameActivity : ComponentActivity() {
             }
         }
         return false
-
-        //Return Intersection
-        //return rect1.intersect(rect2)
     }
 
     private fun catJump() {
@@ -533,9 +593,17 @@ class GameActivity : ComponentActivity() {
         }
     }
 
+    //Load Settings from Shared Prefs
+    private fun loadPrefs() {
+        this.sharedPrefs = getSharedPreferences(prefsName, MODE_PRIVATE)
+        this.editor = this.sharedPrefs.edit()
+        this.highScore = this.sharedPrefs.getLong(scoreCheck, 0)
+        this.isOSTPlaying = this.sharedPrefs.getBoolean(ostCheck, true)
+        this.isSFXOn = this.sharedPrefs.getBoolean(sfxCheck, true)
+    }
+
     private fun dpToPixels(context: Context, dp: Float): Int {
         val density = context.resources.displayMetrics.density
         return (dp * density).toInt()
     }
-
 }

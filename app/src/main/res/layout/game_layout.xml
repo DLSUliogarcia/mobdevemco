@@ -122,7 +122,7 @@
         android:id="@+id/gameOver"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:background="#FFC800"
+        android:background="#8000FF"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,57 +131,80 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible">
 
-        <TextView
-            android:id="@+id/scoreText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_weight="1"
-            android:text="SCORE"
-            android:textAlignment="center"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/finalScore"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="0"
-            android:textAlignment="center"
-            android:textSize="34sp" />
-
         <LinearLayout
+            android:id="@+id/finalScoreLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <ImageView
+                android:id="@+id/game_crown"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/crown"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/finalScore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scoreBtns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
+            android:padding="10dp"
             android:weightSum="3">
 
             <ImageButton
                 android:id="@+id/shareBtn"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/circle_btn"
                 android:backgroundTint="#40BEFF"
+                android:padding="8dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/share" />
 
             <ImageButton
                 android:id="@+id/replayBtn"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/circle_btn"
                 android:backgroundTint="#FF8000"
+                android:padding="8dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/replay" />
 
             <ImageButton
                 android:id="@+id/homeBtn"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/circle_btn"
                 android:backgroundTint="#00FF00"
+                android:padding="8dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/home" />
 
@@ -254,7 +277,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_btn"
                 android:backgroundTint="#A6FFFF00"
-                android:foregroundTint="#FFFF00"
+                android:foregroundTint="#8000FF"
                 android:padding="7dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/sfx" />
@@ -268,7 +291,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_btn"
                 android:backgroundTint="#A6FFFF00"
-                android:foregroundTint="#000000"
+                android:foregroundTint="#8000FF"
                 android:padding="10dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ost" />
