@@ -204,7 +204,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle_btn"
                 android:backgroundTint="#00FF00"
-                android:padding="8dp"
+                android:padding="10dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/home" />
 

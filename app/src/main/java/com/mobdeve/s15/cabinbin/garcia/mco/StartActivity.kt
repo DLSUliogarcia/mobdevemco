@@ -1,5 +1,6 @@
 package com.mobdeve.s15.cabinbin.garcia.mco
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
@@ -8,6 +9,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -114,7 +116,8 @@ class StartActivity : ComponentActivity() {
         this.startBtn = findViewById(R.id.startBtn)
         this.startBtn.setOnClickListener{
             finish()
-            startActivity(Intent(this, GameActivity::class.java))
+            val options = ActivityOptions.makeCustomAnimation(this, android.R.anim.fade_in, android.R.anim.fade_out)
+            startActivity(Intent(this, GameActivity::class.java),options.toBundle())
         }
     }
 

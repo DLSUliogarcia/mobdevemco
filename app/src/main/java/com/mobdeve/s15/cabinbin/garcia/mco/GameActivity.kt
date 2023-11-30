@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -245,7 +246,7 @@ class GameActivity : ComponentActivity() {
             //Obstacle Handler Does Not Have Callbacks
             if(this.isObstacleRunning){
                 resumeGameAnimations()
-            } else{
+            } else{ //Obstacle Handler Has Callbacks
                 this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
                 this.obstacleHandler.postDelayed(this.obstacleRunnable, this.lapseVal)
             }
@@ -275,7 +276,8 @@ class GameActivity : ComponentActivity() {
             this.ostThread.quit()
             this.obstacleThread.quit()
             finish()
-            startActivity(Intent(this, StartActivity::class.java))
+            val options = ActivityOptions.makeCustomAnimation(this, android.R.anim.fade_in, android.R.anim.fade_out)
+            startActivity(Intent(this, StartActivity::class.java),options.toBundle())
         }
         //Pause Menu: OST Button
         this.ostBtn.setOnClickListener{
@@ -421,7 +423,8 @@ class GameActivity : ComponentActivity() {
             this.ostThread.quit()
             this.obstacleThread.quit()
             finish()
-            startActivity(Intent(this, StartActivity::class.java))
+            val options = ActivityOptions.makeCustomAnimation(this, android.R.anim.fade_in, android.R.anim.fade_out)
+            startActivity(Intent(this, StartActivity::class.java),options.toBundle())
         }
         this.replayBtn.setOnClickListener{
             this.gameOverSFX.stop()
@@ -431,7 +434,8 @@ class GameActivity : ComponentActivity() {
             this.ostThread.quit()
             this.obstacleThread.quit()
             finish()
-            startActivity(Intent(this, GameActivity::class.java))
+            val options = ActivityOptions.makeCustomAnimation(this, android.R.anim.fade_in, android.R.anim.fade_out)
+            startActivity(Intent(this, GameActivity::class.java),options.toBundle())
         }
     }
 

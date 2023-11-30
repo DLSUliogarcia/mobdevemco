@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+anim fade_in
 color black
 color purple_200
 color purple_500
