@@ -28,10 +28,6 @@
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:/layout_start_layout.xml.flat",
-        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:/layout/start_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },

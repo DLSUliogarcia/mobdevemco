@@ -1038,7 +1038,6 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id backBtn
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1055,7 +1054,6 @@ id cache_measures
 id callMeasure
 id carryVelocity
 id catView
-id catView2
 id center
 id center_vertical
 id chain
@@ -1078,7 +1076,6 @@ id cos
 id currentState
 id custom
 id customPanel
-id dateTv
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -1109,7 +1106,6 @@ id edit_text_id
 id end
 id expand_activities_button
 id expanded_menu
-id fbBtn
 id finalScore
 id finalScoreLayout
 id flip
@@ -1119,9 +1115,7 @@ id gameOver
 id game_bg
 id game_cat
 id game_crown
-id game_livingRoom2
 id game_mouse
-id game_mouse2
 id game_obstacle0
 id game_obstacle1
 id game_obstacle2
@@ -1139,7 +1133,6 @@ id hide_ime_id
 id hide_in_inspector_tag
 id highScoreBtn
 id highScoreLayout
-id highscoresRv
 id home
 id homeAsUp
 id homeBtn
@@ -1207,10 +1200,8 @@ id position
 id postLayout
 id progress_circular
 id progress_horizontal
-id purpleBg
 id quitBtn
 id radio
-id rankTv
 id ratio
 id rectangles
 id replayBtn
@@ -1222,7 +1213,6 @@ id right_side
 id sawtooth
 id score
 id scoreBtns
-id scoreTv
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -1293,7 +1283,6 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView
 id time
 id title
 id titleDividerNoCustom
@@ -1366,8 +1355,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout custom_dialog
 layout game_layout
-layout highscore_data_layout
-layout highscores_layout
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout notification_action

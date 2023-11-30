@@ -15,7 +15,6 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
@@ -50,6 +49,7 @@ class GameActivity : ComponentActivity() {
 
     //Obstacles
     private lateinit var obstacles : Array<ImageView>
+    private var isObstacleRunning : Boolean = false
     private lateinit var obstacleBitmap : Bitmap
     private lateinit var obstacleThread: HandlerThread
     @Volatile private var obstacleVal = 0
@@ -203,30 +203,6 @@ class GameActivity : ComponentActivity() {
 
         //Screen: Cat Jump Listener
         this.screenLayout = findViewById(R.id.game_bg)
-        this.screenLayout.setOnTouchListener { view, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    this.touchStartTime = System.currentTimeMillis()
-                    this.screenLayout.postDelayed({
-                        if (this.isGameRunning && !this.isCatMidair) {
-                            playJumpSFX()
-                            catHiJump()
-                        }
-                    }, 150)
-                }
-                MotionEvent.ACTION_UP -> {
-                    this.screenLayout.removeCallbacks(null)
-                    if (this.isGameRunning && !this.isCatMidair) {
-                        val touchDuration = System.currentTimeMillis() - this.touchStartTime
-                        if (touchDuration < 151) {
-                            playJumpSFX()
-                            catJump()
-                        }
-                    }
-                }
-            }
-            true
-        }
 
         //Distance Travel
         this.bgWidth = dpToPixels(this, this.background.layoutParams.width.toFloat()).toFloat()
@@ -258,7 +234,6 @@ class GameActivity : ComponentActivity() {
             this.scoreHandler.removeCallbacks(this.scoreRunnable)
             pauseGameAnimations()
             this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
-            //this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
         }
         //Pause Menu: Continue Button
         this.contBtn = findViewById(R.id.continueBtn)
@@ -267,9 +242,15 @@ class GameActivity : ComponentActivity() {
             this.isGamePaused = false
             this.background.start()
             this.scoreHandler.postDelayed(this.scoreRunnable, 500)
-            //this.obstacleHandler.postDelayed(this.obstacleRunnable, this.lapseVal)
-            resumeGameAnimations()
+            //Obstacle Handler Does Not Have Callbacks
+            if(this.isObstacleRunning){
+                resumeGameAnimations()
+            } else{
+                this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
+                this.obstacleHandler.postDelayed(this.obstacleRunnable, this.lapseVal)
+            }
         }
+
         //Pause Menu: Quit Button
         this.quitBtn = findViewById(R.id.quitBtn)
         this.quitBtn.setOnClickListener{
@@ -337,8 +318,12 @@ class GameActivity : ComponentActivity() {
         super.onResume()
         this.ostHandler.postDelayed(this.ostRunnable, 0)
         this.scoreHandler.postDelayed(this.scoreRunnable, 500)
-        this.obstacleHandler.postDelayed(this.obstacleRunnable, this.lapseVal)
-        resumeGameAnimations()
+        if(this.isObstacleRunning){
+            resumeGameAnimations()
+        } else{
+            this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
+            this.obstacleHandler.postDelayed(this.obstacleRunnable, this.lapseVal)
+        }
     }
 
     override fun onPause() {
@@ -347,6 +332,32 @@ class GameActivity : ComponentActivity() {
         this.scoreHandler.removeCallbacks(this.scoreRunnable)
         pauseGameAnimations()
         this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
+    }
+
+    //Screen: Cat Jump
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                this.touchStartTime = System.currentTimeMillis()
+                this.screenLayout.postDelayed({
+                    if (this.isGameRunning && !this.isCatMidair) {
+                        playJumpSFX()
+                        catHiJump()
+                    }
+                }, 150)
+            }
+            MotionEvent.ACTION_UP -> {
+                this.screenLayout.removeCallbacks(null)
+                if (this.isGameRunning && !this.isCatMidair) {
+                    val touchDuration = System.currentTimeMillis() - this.touchStartTime
+                    if (touchDuration < 151) {
+                        playJumpSFX()
+                        catJump()
+                    }
+                }
+            }
+        }
+        return super.onTouchEvent(event)
     }
 
     private fun gameOver() {
@@ -461,6 +472,7 @@ class GameActivity : ComponentActivity() {
             runOnUiThread {
                 obstacles[obstacleVal].visibility = View.VISIBLE
                 obstacleAnimator.start()
+                this.isObstacleRunning = true
             }
         }
     }
@@ -490,6 +502,7 @@ class GameActivity : ComponentActivity() {
                 obstacles[i].translationX = 0f
                 obstacles[i].visibility = View.GONE
                 obstacleHandler.postDelayed(obstacleRunnable, lapseVal)
+                isObstacleRunning = false
             }
         })
     }

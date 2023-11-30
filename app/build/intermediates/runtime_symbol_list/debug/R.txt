@@ -1037,7 +1037,6 @@ int id auto 0x7f07004e
 int id autoComplete 0x7f07004f
 int id autoCompleteToEnd 0x7f070050
 int id autoCompleteToStart 0x7f070051
-int id backBtn 0x7f070052
 int id barrier 0x7f070053
 int id baseline 0x7f070054
 int id beginOnFirstDraw 0x7f070055
@@ -1054,7 +1053,6 @@ int id cache_measures 0x7f07005f
 int id callMeasure 0x7f070060
 int id carryVelocity 0x7f070061
 int id catView 0x7f070062
-int id catView2 0x7f070063
 int id center 0x7f070064
 int id center_vertical 0x7f070065
 int id chain 0x7f070066
@@ -1077,7 +1075,6 @@ int id cos 0x7f070076
 int id currentState 0x7f070077
 int id custom 0x7f070078
 int id customPanel 0x7f070079
-int id dateTv 0x7f07007a
 int id decelerate 0x7f07007b
 int id decelerateAndComplete 0x7f07007c
 int id decor_content_parent 0x7f07007d
@@ -1108,7 +1105,6 @@ int id edit_text_id 0x7f070095
 int id end 0x7f070096
 int id expand_activities_button 0x7f070097
 int id expanded_menu 0x7f070098
-int id fbBtn 0x7f070099
 int id finalScore 0x7f07009a
 int id finalScoreLayout 0x7f07009b
 int id flip 0x7f07009c
@@ -1118,9 +1114,7 @@ int id gameOver 0x7f07009f
 int id game_bg 0x7f0700a0
 int id game_cat 0x7f0700a1
 int id game_crown 0x7f0700a2
-int id game_livingRoom2 0x7f0700a3
 int id game_mouse 0x7f0700a4
-int id game_mouse2 0x7f0700a5
 int id game_obstacle0 0x7f0700a6
 int id game_obstacle1 0x7f0700a7
 int id game_obstacle2 0x7f0700a8
@@ -1138,7 +1132,6 @@ int id hide_ime_id 0x7f0700b3
 int id hide_in_inspector_tag 0x7f0700b4
 int id highScoreBtn 0x7f0700b5
 int id highScoreLayout 0x7f0700b6
-int id highscoresRv 0x7f0700b7
 int id home 0x7f0700b8
 int id homeAsUp 0x7f0700b9
 int id homeBtn 0x7f0700ba
@@ -1206,10 +1199,8 @@ int id position 0x7f0700f7
 int id postLayout 0x7f0700f8
 int id progress_circular 0x7f0700f9
 int id progress_horizontal 0x7f0700fa
-int id purpleBg 0x7f0700fb
 int id quitBtn 0x7f0700fc
 int id radio 0x7f0700fd
-int id rankTv 0x7f0700fe
 int id ratio 0x7f0700ff
 int id rectangles 0x7f070100
 int id replayBtn 0x7f070101
@@ -1221,7 +1212,6 @@ int id right_side 0x7f070106
 int id sawtooth 0x7f070107
 int id score 0x7f070108
 int id scoreBtns 0x7f070109
-int id scoreTv 0x7f07010a
 int id screen 0x7f07010b
 int id scrollIndicatorDown 0x7f07010c
 int id scrollIndicatorUp 0x7f07010d
@@ -1292,7 +1282,6 @@ int id text 0x7f07014d
 int id text2 0x7f07014e
 int id textSpacerNoButtons 0x7f07014f
 int id textSpacerNoTitle 0x7f070150
-int id textView 0x7f070151
 int id time 0x7f070152
 int id title 0x7f070153
 int id titleDividerNoCustom 0x7f070154
@@ -1365,8 +1354,6 @@ int layout abc_select_dialog_material 0x7f0a001a
 int layout abc_tooltip 0x7f0a001b
 int layout custom_dialog 0x7f0a001c
 int layout game_layout 0x7f0a001d
-int layout highscore_data_layout 0x7f0a001e
-int layout highscores_layout 0x7f0a001f
 int layout ime_base_split_test_activity 0x7f0a0020
 int layout ime_secondary_split_test_activity 0x7f0a0021
 int layout notification_action 0x7f0a0022
