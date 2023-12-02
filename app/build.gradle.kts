@@ -68,4 +68,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation ("com.facebook.android:facebook-android-sdk:[8,9)")
+    implementation ("com.facebook.android:facebook-share:latest.release")
+    implementation ("com.facebook.android:facebook-android-sdk:latest.release")
+
 }
