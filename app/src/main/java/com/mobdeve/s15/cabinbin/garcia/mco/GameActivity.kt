@@ -13,9 +13,12 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.Rect
 import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
+import android.os.Looper
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
@@ -30,6 +33,20 @@ import androidx.core.graphics.drawable.toBitmap
 import com.q42.android.scrollingimageview.ScrollingImageView
 import java.lang.Integer.max
 import java.lang.Math.min
+
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
+import com.facebook.share.ShareApi;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
+import java.util.Arrays
+
 
 class GameActivity : ComponentActivity() {
     //Cat
@@ -107,8 +124,15 @@ class GameActivity : ComponentActivity() {
     private var isSFXOn = true                              //SFX Activation
     private var highScore: Long = 0                         //Game's High Score
 
+    //Facebook Stuff
+    private var callbackManager: CallbackManager? = null
+    private lateinit var shareHandler: Handler
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        FacebookSdk.sdkInitialize(applicationContext)
         super.onCreate(savedInstanceState)
+        callbackManager = CallbackManager.Factory.create()
 
         // Start Menu Layout
         setContentView(R.layout.game_layout)
@@ -171,7 +195,7 @@ class GameActivity : ComponentActivity() {
         this.catBitmap = BitmapFactory.decodeResource(resources, R.drawable.cat_run)
         this.catJumpAnimatorSet = AnimatorSet()
         //Cat Jump Animation
-        this.catJumpAnimator = ObjectAnimator.ofFloat(this.cat, "translationY", -dpToPixels(this, 140f).toFloat())
+        this.catJumpAnimator = ObjectAnimator.ofFloat(this.cat, "translationY", -dpToPixels(this, 150f).toFloat())
         this.catJumpAnimator.duration = 447 // [Milliseconds]
         this.catJumpAnimator.addUpdateListener { _ ->
             if (checkCollision(cat, obstacles[obstacleVal])) {
@@ -312,6 +336,8 @@ class GameActivity : ComponentActivity() {
             this.editor.apply()
         }
 
+        shareHandler = Handler(Looper.getMainLooper())
+
         //Initialize Game
         initMusicHandler()
         initScoreHandler()
@@ -332,6 +358,7 @@ class GameActivity : ComponentActivity() {
 
     override fun onPause() {
         super.onPause()
+
         this.ostHandler.removeCallbacks(this.ostRunnable)
         this.scoreHandler.removeCallbacks(this.scoreRunnable)
         pauseGameAnimations()
@@ -418,6 +445,20 @@ class GameActivity : ComponentActivity() {
         }
 
         //Game Over Menu: Buttons
+        this.shareBtn.setOnClickListener {
+            shareHandler.post {
+                // Code for sharing goes here
+                // Use Intent to share content
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.type = "text/plain"
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "I just scored $score points in the game! Can you beat my score?")
+
+                // Start the activity with the share intent
+                startActivity(Intent.createChooser(shareIntent, "Share your score"))
+            }
+        }
+
+
         this.homeBtn.setOnClickListener{
             this.gameOverSFX.stop()
             this.gameOverSFX.release()

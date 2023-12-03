@@ -15,6 +15,10 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 
+import com.facebook.FacebookSdk
+import com.facebook.login.widget.LoginButton
+import com.facebook.share.widget.ShareButton;
+
 class StartActivity : ComponentActivity() {
     //OST
     private lateinit var ostPlayer: MediaPlayer
@@ -30,6 +34,7 @@ class StartActivity : ComponentActivity() {
     private lateinit var highScoreBtn: Button
     private lateinit var sfxBtn: ImageButton
     private lateinit var ostBtn: ImageButton
+    private lateinit var loginBtn: ImageButton
 
     //Shared Preferences
     private lateinit var sharedPrefs: SharedPreferences
@@ -42,9 +47,9 @@ class StartActivity : ComponentActivity() {
     private var isSFXOn = true                              //SFX Activation
     private var highScore: Long = 0                         //Game's High Score
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FacebookSdk.sdkInitialize(applicationContext)
 
         // Start Menu Layout
         setContentView(R.layout.start_layout)

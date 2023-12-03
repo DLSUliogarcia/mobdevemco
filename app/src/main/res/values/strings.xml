@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Cabinbin, Garcia - MCO</string>
+    <string name="facebook_app_id">1371131536848119</string>
+    <string name="facebook_client_token">48437966a3cd9a4b42aad2b7b78979af</string>
 </resources>
