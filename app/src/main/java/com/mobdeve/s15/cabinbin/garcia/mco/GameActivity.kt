@@ -22,6 +22,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Switch
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +35,7 @@ class GameActivity : ComponentActivity() {
     //Cat
     private lateinit var cat: ImageView
     private lateinit var catBitmap : Bitmap
-    private var isCatMidair = false
+    private var catJumpHeight = 0
     private lateinit var catJumpAnimatorSet: AnimatorSet    //Animator Set for Cat Motion
     private lateinit var catJumpAnimator: ObjectAnimator    //Animator for Cat Jumping
     private lateinit var catFallAnimator: ObjectAnimator    //Animator for Cat Falling
@@ -247,6 +248,7 @@ class GameActivity : ComponentActivity() {
             if(this.isObstacleRunning){
                 resumeGameAnimations()
             } else{ //Obstacle Handler Has Callbacks
+                if(this.catJumpAnimatorSet.isPaused) this.catJumpAnimatorSet.resume()
                 this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
                 this.obstacleHandler.postDelayed(this.obstacleRunnable, this.lapseVal)
             }
@@ -342,7 +344,7 @@ class GameActivity : ComponentActivity() {
             MotionEvent.ACTION_DOWN -> {
                 this.touchStartTime = System.currentTimeMillis()
                 this.screenLayout.postDelayed({
-                    if (this.isGameRunning && !this.isCatMidair) {
+                    if (this.isGameRunning && this.catJumpHeight==0) {
                         playJumpSFX()
                         catHiJump()
                     }
@@ -350,7 +352,7 @@ class GameActivity : ComponentActivity() {
             }
             MotionEvent.ACTION_UP -> {
                 this.screenLayout.removeCallbacks(null)
-                if (this.isGameRunning && !this.isCatMidair) {
+                if (this.isGameRunning && this.catJumpHeight==0) {
                     val touchDuration = System.currentTimeMillis() - this.touchStartTime
                     if (touchDuration < 151) {
                         playJumpSFX()
@@ -389,7 +391,7 @@ class GameActivity : ComponentActivity() {
 
         //Stop Animations
         this.catJumpAnimatorSet.cancel()
-        this.obstacleAnimator.cancel()
+        this.obstacleAnimator.pause()
 
         //Stop Obstacle Handler
         this.obstacleHandler.removeCallbacks(this.obstacleRunnable)
@@ -400,8 +402,9 @@ class GameActivity : ComponentActivity() {
 
         //Cat Crash Animations
         this.cat.setImageResource(R.drawable.crash)
-        this.cat.layoutParams.width = dpToPixels(this,160f)
-        this.cat.layoutParams.height = dpToPixels(this, 160f)
+
+        //Obstacle Crash Animations
+        this.obstacles[this.obstacleVal].setImageResource(R.drawable.crash)
 
         //Game Over Menu
         this.gameOverMenu.visibility = View.VISIBLE
@@ -539,16 +542,16 @@ class GameActivity : ComponentActivity() {
     }
 
     private fun catJump() {
-        if (!isCatMidair && !isGamePaused) {
+        if (this.catJumpHeight==0 && !isGamePaused) {
             //The Cat is Midair
-            isCatMidair = true
+            this.catJumpHeight = 1
             //Sequentially Play Jump then Fall
             this.catJumpAnimatorSet = AnimatorSet()
             this.catJumpAnimatorSet.playSequentially(this.catJumpAnimator , this.catFallAnimator)
             //After Animation, the cat is not Midair
             this.catJumpAnimatorSet.addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    isCatMidair = false
+                    catJumpHeight = 0
                 }
             })
             //Start Animation
@@ -557,16 +560,16 @@ class GameActivity : ComponentActivity() {
     }
 
     private fun catHiJump() {
-        if (!isCatMidair && !isGamePaused) {
+        if (this.catJumpHeight==0 && !isGamePaused) {
             //The Cat is Midair
-            isCatMidair = true
+            this.catJumpHeight = 2
             //Sequentially Play Jump then Fall
             this.catJumpAnimatorSet = AnimatorSet()
             this.catJumpAnimatorSet.playSequentially(this.catHiJumpAnimator , this.catHiFallAnimator)
             //After Animation, the cat is not Midair
             this.catJumpAnimatorSet.addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    isCatMidair = false
+                    catJumpHeight = 0
                 }
             })
             //Start Animation
@@ -575,17 +578,8 @@ class GameActivity : ComponentActivity() {
     }
 
     private fun pauseGameAnimations() {
-        if (this.catJumpAnimator.isRunning) {
-            this.catJumpAnimator.pause()
-        }
-        if (this.catFallAnimator.isRunning) {
-            this.catFallAnimator.pause()
-        }
-        if (this.catHiJumpAnimator.isRunning) {
-            this.catHiJumpAnimator.pause()
-        }
-        if (this.catHiFallAnimator.isRunning) {
-            this.catHiFallAnimator.pause()
+        if(this.catJumpAnimatorSet.isRunning){
+            this.catJumpAnimatorSet.pause()
         }
         if (this.obstacleAnimator.isRunning) {
             this.obstacleAnimator.pause()
@@ -593,17 +587,8 @@ class GameActivity : ComponentActivity() {
     }
 
     private fun resumeGameAnimations() {
-        if (this.catJumpAnimator.isPaused) {
-            this.catJumpAnimator.resume()
-        }
-        if (this.catFallAnimator.isPaused) {
-            this.catFallAnimator.resume()
-        }
-        if (this.catHiJumpAnimator.isPaused) {
-            this.catHiJumpAnimator.resume()
-        }
-        if (this.catHiFallAnimator.isPaused) {
-            this.catHiFallAnimator.resume()
+        if(this.catJumpAnimatorSet.isPaused){
+            this.catJumpAnimatorSet.resume()
         }
         if (this.obstacleAnimator.isPaused) {
             this.obstacleAnimator.resume()

@@ -64,6 +64,10 @@
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\cat_run.png"
     },
     {
+        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:/layout_game_layout.xml.flat",
+        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:/layout/game_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -148,6 +152,10 @@
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\home.png"
     },
     {
+        "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\anim_fade_in.xml.flat",
+        "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\anim\\fade_in.xml"
+    },
+    {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\drawable_round_btn.xml.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\drawable\\round_btn.xml"
     },
@@ -178,9 +186,5 @@
     {
         "merged": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Aurelio Garcia\\.gradle\\daemon\\8.0\\com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.mobdeve.s15.cabinbin.garcia.mco.app-merged_res-50:/anim_fade_in.xml.flat",
-        "source": "com.mobdeve.s15.cabinbin.garcia.mco.app-main-52:/anim/fade_in.xml"
     }
 ]
