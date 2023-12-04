@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
@@ -46,6 +47,9 @@ class StartActivity : ComponentActivity() {
     private var isOSTPlaying = true                         //OST Activation
     private var isSFXOn = true                              //SFX Activation
     private var highScore: Long = 0                         //Game's High Score
+
+    //Crash Button moment
+    private lateinit var crashBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -123,6 +127,11 @@ class StartActivity : ComponentActivity() {
             finish()
             val options = ActivityOptions.makeCustomAnimation(this, android.R.anim.fade_in, android.R.anim.fade_out)
             startActivity(Intent(this, GameActivity::class.java),options.toBundle())
+        }
+
+        this.crashBtn = findViewById(R.id.crashBtn)
+        this.crashBtn.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
         }
     }
 

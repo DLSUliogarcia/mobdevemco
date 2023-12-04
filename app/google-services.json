@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "296512197466",
+    "project_id": "catnmouse-7f3de",
+    "storage_bucket": "catnmouse-7f3de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296512197466:android:16eab9f7169a0b73b81963",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s15.cabinbin.garcia.mco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5LmhnUVvcp2Rf9D2qZ_OkBVw0thrGSYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
