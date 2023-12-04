@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -71,5 +73,8 @@ dependencies {
     implementation ("com.facebook.android:facebook-android-sdk:[8,9)")
     implementation ("com.facebook.android:facebook-share:latest.release")
     implementation ("com.facebook.android:facebook-android-sdk:latest.release")
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
 
 }
