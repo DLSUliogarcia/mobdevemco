@@ -18,34 +18,26 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Switch
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.FileProvider
 import androidx.core.graphics.drawable.toBitmap
 import com.q42.android.scrollingimageview.ScrollingImageView
 import java.lang.Integer.max
 import java.lang.Math.min
 
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.login.LoginManager
-import com.facebook.login.LoginResult
-import com.facebook.share.ShareApi;
-import com.facebook.share.Sharer;
-import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.widget.ShareButton;
-import com.facebook.share.widget.ShareDialog;
-import java.util.Arrays
+import com.facebook.CallbackManager
+import com.facebook.FacebookSdk
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 
 class GameActivity : ComponentActivity() {
@@ -127,6 +119,7 @@ class GameActivity : ComponentActivity() {
     //Facebook Stuff
     private var callbackManager: CallbackManager? = null
     private lateinit var shareHandler: Handler
+    private val REQUEST_SHARE_CODE = 123
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -338,10 +331,43 @@ class GameActivity : ComponentActivity() {
 
         shareHandler = Handler(Looper.getMainLooper())
 
+        this.shareBtn.setOnClickListener {
+            shareHandler.post {
+                val left = gameOverMenu.left
+                val top = gameOverMenu.top + 40
+                val right = left + gameOverMenu.width
+                val bottom = top + gameOverMenu.height*2
+                val cropRect = Rect(left, top, right, bottom)
+
+                val screenshot = takeScreenshot()
+                val screenshotUri = saveScreenshot(screenshot, cropRect)
+
+                // Code for sharing goes here
+                // Use Intent to share content
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.type = "image/*"
+                shareIntent.putExtra(Intent.EXTRA_STREAM, screenshotUri)
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "I just scored $score points in Cat N' Mouse! Can you beat my score?")
+
+                // Start the activity with the share intent
+                val shareActivityIntent = Intent.createChooser(shareIntent, "Share your score")
+                startActivityForResult(shareActivityIntent, REQUEST_SHARE_CODE)
+            }
+        }
+
         //Initialize Game
         initMusicHandler()
         initScoreHandler()
         initObstacleHandler()
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_SHARE_CODE) {
+            // This block will be executed when the user finishes sharing
+            // Start the GameActivity here
+            val gameIntent = Intent(this, GameActivity::class.java)
+            startActivity(gameIntent)
+        }
     }
 
     override fun onResume() {
@@ -445,20 +471,6 @@ class GameActivity : ComponentActivity() {
         }
 
         //Game Over Menu: Buttons
-        this.shareBtn.setOnClickListener {
-            shareHandler.post {
-                // Code for sharing goes here
-                // Use Intent to share content
-                val shareIntent = Intent(Intent.ACTION_SEND)
-                shareIntent.type = "text/plain"
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "I just scored $score points in the game! Can you beat my score?")
-
-                // Start the activity with the share intent
-                startActivity(Intent.createChooser(shareIntent, "Share your score"))
-            }
-        }
-
-
         this.homeBtn.setOnClickListener{
             this.gameOverSFX.stop()
             this.gameOverSFX.release()
@@ -649,4 +661,35 @@ class GameActivity : ComponentActivity() {
         val density = context.resources.displayMetrics.density
         return (dp * density).toInt()
     }
+
+    private fun takeScreenshot(): Bitmap {
+        // Assuming your game view is named gameView
+        val rootView = window.decorView.rootView
+        rootView.isDrawingCacheEnabled = true
+        val screenshot = Bitmap.createBitmap(rootView.drawingCache)
+        rootView.isDrawingCacheEnabled = false
+
+        return screenshot
+    }
+
+    private fun saveScreenshot(screenshot: Bitmap, cropRect: Rect): Uri {
+
+        val croppedBitmap = Bitmap.createBitmap(screenshot, cropRect.left, cropRect.top, cropRect.width(), cropRect.height())
+
+        // Save the screenshot to a file and return its Uri
+        val imageFile = File(getExternalFilesDir(null), "screenshot.png")
+        try {
+            FileOutputStream(imageFile).use { fos ->
+                croppedBitmap.compress(Bitmap.CompressFormat.PNG, 100, fos)
+                fos.flush()
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+        return FileProvider.getUriForFile(this, "${packageName}.fileprovider", imageFile)
+    }
+
+
+
 }
